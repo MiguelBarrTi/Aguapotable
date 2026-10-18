@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cobros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="text-primary">Cobros Generados</h2>
+        <table class="table table-striped shadow-sm">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Habitante</th>
+                    <th>Periodo</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for c in cobros %}
+                <tr>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.habitante.nombre }}</td>
+                    <td>{{ c.periodo.nombre }}</td>
+                    <td>${{ c.monto }}</td>
+                    <td>
+                        {% if c.estado == "pendiente" %}
+                            <span class="badge bg-warning">Pendiente</span>
+                        {% else %}
+                            <span class="badge bg-success">Pagado</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
