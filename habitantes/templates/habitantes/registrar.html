@@ -1,18 +1,223 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Registrar Habitante</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <style>
+
+        body{
+            background-color:#f4f7fc;
+        }
+
+        .form-card{
+            border:none;
+            border-radius:15px;
+        }
+
+        .card-header{
+            background:#0d6efd;
+            color:white;
+            border-radius:15px 15px 0 0 !important;
+        }
+
+        .section-title{
+            color:#0d6efd;
+            font-weight:bold;
+            margin-bottom:15px;
+        }
+
+        .btn-custom{
+            min-width:180px;
+        }
+
+    </style>
+
 </head>
-<body class="bg-light">
-    <div class="container mt-5">
-        <h2 class="text-primary">Registrar Habitante</h2>
-        <form method="POST" class="card p-4 shadow-sm">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit" class="btn btn-success w-100">Guardar</button>
-        </form>
-    </div>
-</body>
-</html>
+
+<body>
+
+<div class="container mt-5 mb-5">
+
+    <div class="card shadow-lg form-card">
+
+        <div class="card-header">
+
+            <h2 class="text-center mb-0">
+                 Registro de Habitante
+            </h2>
+
+        </div>
+
+        <div class="card-body p-4">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <!-- DATOS PERSONALES -->
+
+                <h4 class="section-title">
+                    Información Personal
+                </h4>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            CURP
+                        </label>
+
+                        {{ form.curp }}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Teléfono
+                        </label>
+
+                        {{ form.telefono }}
+
+                    </div>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nombre(s)
+                    </label>
+
+                    {{ form.nombre }}
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Apellido Paterno
+                        </label>
+
+                        {{ form.apellido_paterno }}
+
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+
+                        <label class="form-label">
+                            Apellido Materno
+                        </label>
+
+                        {{ form.apellido_materno }}
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- INFORMACIÓN DEL DOMICILIO -->
+
+                <h4 class="section-title">
+                    Información del Domicilio
+                </h4>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Calle / Domicilio
+                    </label>
+
+                    {{ form.domicilio }}
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-4 mb-3">
+
+                        <label class="form-label">
+                            Número Exterior
+                        </label>
+
+                        {{ form.numero_exterior }}
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        <label class="form-label">
+                            Número Interior
+                        </label>
+
+                        {{ form.numero_interior }}
+
+                    </div>
+
+                    <div class="col-md-4 mb-3">
+
+                        <label class="form-label">
+                            Código Postal
+                        </label>
+
+                        {{ form.codigo_postal }}
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-4">
+
+                        <label class="form-label">
+                            Líneas Instaladas
+                        </label>
+
+                        {{ form.lineas_domicilio }}
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- BOTONES -->
+
+                <div class="text-center">
+
+                    <button type="submit"
+                            class="btn btn-success btn-lg btn-custom">
+
+                         Guardar Habitante
+
+                    </button>
+
+                    <a href="/"
+                       class="btn btn-primary btn-lg btn-custom">
+
+                         Panel Principal
+
+                    </a>
+
+                    <a href="/habitantes/lista/"
+                       class="btn btn-secondary btn-lg btn-custom">
+
+                       ver Habitantes
+
+                    </a>
+</div>
+
+    

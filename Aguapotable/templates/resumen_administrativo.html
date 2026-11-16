@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Resumen Administrativo</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h2>
+        Resumen Administrativo
+    </h2>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <div class="card p-3 shadow">
+                <h5>Habitantes</h5>
+                <h2>{{ habitantes }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3 shadow">
+                <h5>Cuotas Generadas</h5>
+                <h2>{{ cuotas }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-3 shadow">
+                <h5>Pagos Realizados</h5>
+                <h2>{{ pagos }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card p-3 shadow">
+                <h5>Adeudos</h5>
+                <h2>{{ adeudos }}</h2>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card p-3 shadow">
+                <h5>Total Recaudado</h5>
+                <h2>${{ recaudado.monto_pagado__sum }}</h2>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

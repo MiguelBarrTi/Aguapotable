@@ -5,3 +5,12 @@ class PagoForm(forms.ModelForm):
     class Meta:
         model = Pago
         fields = ["cobro", "monto_pagado"]
+
+class CorregirPagoForm(forms.ModelForm):
+
+    class Meta:
+        model = Pago
+
+        fields = [
+            'monto_pagado'
+        ]

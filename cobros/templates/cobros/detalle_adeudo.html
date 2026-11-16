@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalle Adeudo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-danger text-white">
+
+            Detalle del Adeudo
+
+        </div>
+
+        <div class="card-body">
+
+            <p>
+                <strong>Habitante:</strong>
+                {{ adeudo.habitante.nombre }}
+            </p>
+
+            <p>
+                <strong>Periodo:</strong>
+                {{ adeudo.periodo.nombre }}
+            </p>
+
+            <p>
+                <strong>Monto:</strong>
+                ${{ adeudo.monto }}
+            </p>
+
+            <p>
+                <strong>Estado:</strong>
+                {{ adeudo.estado }}
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
